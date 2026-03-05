@@ -1,4 +1,7 @@
 // helper functions for line numbers, etc. (original v04 code)
+// API Base URL - ändere dies für verschiedene Umgebungen
+const API_BASE_URL = import.meta.env?.VITE_API_BASE_URL || 'https://syntaxify-backend.onrender.com';
+
 const textarea = document.getElementById("Eingabe");
 const linesDiv = document.getElementById("lines");
 
@@ -191,7 +194,7 @@ async function translate() {
     const target = selectedLanguage;
 
     try {
-        const response = await fetch("/api/translate", {
+        const response = await fetch(`${API_BASE_URL}/api/translate`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
