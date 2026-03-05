@@ -1,0 +1,282 @@
+    body{
+        background-color:rgb(17, 17, 17);
+    }
+
+    nav{
+        background-color: rgb(27, 27, 27);
+    }
+    .navbar .nav-link {
+        background: linear-gradient(to right, #7b2ff7, #d166ad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn-bb {
+        background: linear-gradient(to right, #7b2ff7, #d166ad);
+        border: none;
+        color: rgb(224, 224, 224);
+        font-weight: 500;
+        transition: 0.2s;
+    }
+
+    .btn-bb:hover {
+        filter: brightness(1.2); 
+        color: white;
+    }
+
+    .divfarbe{
+        background-color: rgb(27, 27, 27);
+    }
+
+    .divfarbeteam{
+        background-color: rgb(34, 34, 34);
+    }
+
+    .hr-startseite {
+    border: none;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-image: linear-gradient(to right, #a855f7, #ff66ff, #ff99ff) 1;
+    box-shadow: 0 0 8px rgba(255, 102, 255, 0.6);
+    }
+
+    .hr-sonstiges{
+    border: none;
+    height: 0;
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(to right, #9f5cff, #ff4dff, #ff80ff) 1;
+    box-shadow: 0 0 8px rgba(255, 102, 255, 0.6);
+    }
+
+    @media (max-width: 992px) {
+        .text-content, .image-content {
+            flex: 1 1 100%;       
+            text-align: left !important;
+            margin-bottom: 1rem;
+        }
+
+        .image-content img {
+            display: block;     
+            margin: 1rem auto 0; 
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    footer {
+        background-color: rgb(27, 27, 27);
+        color: #ffffff;
+    }
+
+    footer a {
+        text-decoration: none;
+        background: linear-gradient(to right, #7b2ff7, #ff00ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: 0.3s;
+    }
+
+    footer a:hover {
+        opacity: 0.8;
+    }
+
+    .footer-hr {
+        border: none;
+        height: 3px;
+        width: 50px;
+        margin: 0 auto 1rem auto;
+        background: linear-gradient(to right, #7b2ff7, #ff00ff);
+        border-radius: 5px;
+    }
+
+    footer p {
+        margin: 0;
+        line-height: 1.4; 
+    }
+
+    .image-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .img-groesse{
+        height: 275;
+        width: 200;
+    }
+
+    .divfarbeteam:hover {
+        transform: scale(1.02);
+        transition: transform 0.4s ease;
+    }
+
+    .schriftfarbe-team{
+        color: rgb(143, 143, 143);
+    }
+
+    .editor-container, .output-container {
+        display: flex;
+        position: relative;
+        font-family: monospace;
+        font-size: 14px;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .line-numbers {
+        background-color: #1e1e1e;
+        color: #888;
+        padding: 8px 6px;
+        text-align: right;
+        user-select: none;
+        flex-shrink: 0;
+        width: 40px;
+    }
+
+    textarea {
+        flex: 1;
+        background-color: #1b1b1b;
+        color: #eee;
+        border: none;
+        padding: 8px;
+        font-family: monospace;
+        font-size: 14px;
+        resize: none;
+        overflow: auto;
+    }
+
+    .editor-container textarea {
+        min-height: 400px;
+    }
+
+    .output-container textarea {
+        min-height: 400px; 
+    }
+    .custom-dropdown {
+        position: relative;
+        width: 220px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .dropdown-selected {
+        background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 18px;
+        border: 1px solid rgba(123, 47, 247, 0.25);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.4),
+                    inset 0 0 0 1px rgba(255,255,255,0.03);
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-selected:hover {
+        border-color: rgba(209, 102, 173, 0.6);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.6),
+                    0 0 10px rgba(123,47,247,0.4);
+    }
+
+    .dropdown-options {
+        position: absolute;      
+        z-index: 9999;                      
+        width: auto;             
+        min-width: 220px;        
+        background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+        border-radius: 18px;
+        border: 1px solid rgba(123, 47, 247, 0.25);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: all 0.25s ease;
+    }
+
+    .custom-dropdown.active .dropdown-options {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .dropdown-item {
+        padding: 12px 20px;
+        color: #fff;
+        transition: all 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+        background: linear-gradient(to right, #7b2ff7, #d166ad);
+    }
+
+    #outputText::placeholder {
+    color: #888 !important;
+    opacity: 1 !important;
+    }
+    
+    .explanation-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 700px;
+    height: 100vh;
+    background: #000000;
+    color: #ddd;
+    overflow-y: hidden;
+    transition: transform 0.3s ease;
+    transform: translateX(calc(100% - 40px));
+    z-index: 9999;
+    border-radius: 6px 0 0 6px;
+    }
+
+    .explanation-panel.active {
+    transform: translateX(0);
+    overflow-y: auto;
+    
+    }
+
+    .explanation-content {
+        padding: 15px;
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .explanation-panel.active .explanation-content {
+        opacity: 1;
+    }
+
+    .explanation-toggle {
+    position: fixed;      
+    top: 200px;          
+    right: 20px;         
+    background: #000000;
+    border: none; 
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 50px;
+    border-radius: 6px 0 0 6px;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s, transform 0.3s;
+    }
+
+    .explanation-panel.active + .explanation-toggle {
+        right: 350px;
+    }
+
+    .explanation-toggle:hover {
+        transform: scale(1.05);
+    }
+    .vorschaufarbe{
+        background-color:#141414;
+    }

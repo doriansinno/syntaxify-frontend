@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" href="bilder/logotab.png" type="image/png">
+    <title>Syntaxify</title>
+    <!-- Bootstrap CSS einbinden -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Eigenes CSS -->
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+               <img src="bilder/logonav.png" alt="Brogram Logo" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-bb px-4" data-bs-toggle="modal" data-bs-target="#registerModal">Mein Profil</button>
+                    </li>   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hauptbereich -->
+    <main class="container my-5">
+        <section>
+            <h4 class="text-white mb-3">Welche Programmiersprache möchtest du übersetzen?</h2>
+            
+
+            <div class="custom-dropdown" id="languageDropdown">
+                <div class="dropdown-selected">Python</div>
+                <div class="dropdown-options">
+                    <div class="dropdown-item" data-value="python">Python</div>
+                    <div class="dropdown-item" data-value="java">Java</div>
+                    <div class="dropdown-item" data-value="csharp">C#</div>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="row g-3">
+                    <!-- Editor -->
+                    <div class="col-md-6">
+                        <div class="editor-container divfarbe p-2">
+                            <div class="line-numbers" id="lines"></div>
+                            <textarea id="Eingabe" spellcheck="false" placeholder="Hier kommt dein Text rein..."></textarea>                        </div>
+                    </div>
+
+                    <!-- Output -->
+                    <div class="col-md-6 position-relative">
+                        <div class="editor-container divfarbe p-2 position-relative" id="outputContainer">
+                            <div class="line-numbers" id="outputCount"></div>
+                            <textarea id="outputText" readonly spellcheck="false" placeholder="Hier wird der Code ausgegeben..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <button id="translateButton" class="btn btn-bb px-4 " onclick="translate()">Übersetzen</button>
+                    </div>
+                            
+                    <!-- Vorschau -->
+                    <h5 class="text-white mb-2">Vorschau:</h5>
+                    <div class="editor-container vorschaufarbe p-2 d-flex ">
+                            <textarea id="liveOutput" readonly spellcheck="false" placeholder="Hier wird die Vorschau angezeigt..." style="flex:1; background:#141414; color:white; overflow:auto; resize:none;"></textarea>
+                    </div>
+        </section>
+    </main>
+    <div id="outputExplanationPanel" class="explanation-panel">
+        <textarea id="liveOutput" 
+          readonly 
+          spellcheck="false" 
+          placeholder="Hier wird die Vorschau angezeigt..." 
+          style="flex:1; background:#000000; color:white; overflow:auto; resize:none; padding-left:40px;"></textarea>
+    </div>
+
+    <button id="toggleOutputExplanation" class="explanation-toggle">^</button>
+
+    <!-- footer -->
+        <footer class="mt-5">
+            <div class="container text-center py-4">
+                <hr class="footer-hr">
+                <h5 class="fw-bold mb-2">Brogram</h5>
+                <p class="mb-2">© 2026 Brogram</p>
+                <p class="mb-0"><a href="dsgvo.html" class="footer-link">DSGVO</a></p>
+                <p class="mb-0"><a href="impressum.html" class="footer-link">Impressum</a></p>
+            </div>
+        </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Eigenes JS -->
+    <script src="script.js"></script>
+</body>
+</html>

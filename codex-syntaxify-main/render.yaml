@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: syntaxify-backend
+    env: java
+    rootDir: backend
+    plan: free
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -Dserver.port=$PORT -jar target/syntaxify-backend-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: ALLOWED_ORIGINS
+        value: https://syntaxify-frontend.onrender.com
+
+  - type: web
+    name: syntaxify-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://syntaxify-backend.onrender.com
